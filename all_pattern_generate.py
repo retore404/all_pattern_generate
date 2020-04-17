@@ -52,8 +52,7 @@ result = list(itertools.product(input_strings_list, repeat=target_length))
 result = [''.join(t) for t in result]
 
 # csv書き出し用にリストを整形
-words = [[w] for w in result]
-print(words) 
+words = [[w] for w in result] 
 
 # csv書き出し
 file_path = directory_path + "pattern_" + str(target_length) + "_letters.csv"
