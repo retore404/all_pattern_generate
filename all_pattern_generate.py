@@ -12,15 +12,19 @@ import sys
 import math
 import itertools
 import csv
+import time
 
 ######################################################################
 ## スクリプト本体
+
+# 開始時間記録
+start_time = time.time()
 
 # 精査
 ## 引数を受け取り，引数の数が3でないとき異常とみなし実行を終了する
 args = sys.argv
 if len(args) != 4: # 0番目の引数はパスなので
-    print('引数は2つ指定してください．')
+    print('引数は3つ指定してください．')
     print('引数1：並び替え対象文字列')
     print('引数2：出力する文字列の長さ')
     print('引数3：結果出力ディレクトリパス')
@@ -61,8 +65,12 @@ with open(file_path, "w") as f:
     for word in words:
         writer.writerow(word)
 
+# 終了時間記録
+end_time = time.time()
 
-
+# スクリプト終了・所要時間出力
+print("Script normal end.")
+print("time(s):" + str(end_time-start_time))
 
 
 
