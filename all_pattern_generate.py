@@ -12,9 +12,13 @@ import sys
 import math
 import itertools
 import csv
+import time
 
 ######################################################################
 ## スクリプト本体
+
+# 開始時間記録
+start_time = time.time()
 
 # 精査
 ## 引数を受け取り，引数の数が3でないとき異常とみなし実行を終了する
@@ -61,8 +65,12 @@ with open(file_path, "w") as f:
     for word in words:
         writer.writerow(word)
 
+# 終了時間記録
+end_time = time.time()
 
-
+# スクリプト終了・所要時間出力
+print("Script normal end.")
+print("time(s):" + str(end_time-start_time))
 
 
 
